@@ -57,22 +57,26 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.prepareToRecord()
         audioRecorder.record()
     }
-
-    @IBAction func resumeAudio(sender: UIButton) {
-        recordingInProgress.text = "Recording in progress"
-        audioRecorder.record()
-    }
-    
-    @IBAction func pauseAudio(sender: UIButton) {
-        recordingInProgress.text = "Recording paused"
-        audioRecorder.pause()
-    }
     
     @IBAction func stopAudio(sender: UIButton) {
         audioRecorder.stop()
         var audioSession = AVAudioSession.sharedInstance()
         audioSession.setActive(false, error: nil)
     }
+    
+    @IBAction func pauseResume(sender: UIButton) {
+        if(sender.tag==1)
+        {
+            recordingInProgress.text = "Recording paused"
+            audioRecorder.pause()
+        }
+        else if(sender.tag==2)
+        {
+            recordingInProgress.text = "Recording in progress"
+            audioRecorder.record()
+        }
+    }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier=="stopRecording")
@@ -85,10 +89,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
         if(flag) {
-            recordedAudio = RecordedAudio()
-            recordedAudio.filePathUrl = recorder.url
-            recordedAudio.title = recorder.url.lastPathComponent
-            self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
+            recordedAudio = RecordedAudio(filePathUrl: recorder.url, title: recorder.url.lastPathComponent!)
+            performSegueWithIdentifier("stopRecording", sender: recordedAudio)
         }
         else
         {

@@ -36,13 +36,13 @@
                                     <action selector="stopAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="x40-hI-XWH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3c-mI-Qxw">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3c-mI-Qxw">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="resumeButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="resumeAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="N6Y-ZW-Pnp"/>
+                                    <action selector="pauseResume:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Yqv-tq-Vcr"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urN-Oh-0Cl">
@@ -51,13 +51,13 @@
                                 <color key="textColor" red="0.14509803921568626" green="0.28235294117647058" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gG-00-1vE">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gG-00-1vE">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="pauseButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="pauseAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZYc-lk-5Ww"/>
+                                    <action selector="pauseResume:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GIC-1k-VWM"/>
                                 </connections>
                             </button>
                         </subviews>
